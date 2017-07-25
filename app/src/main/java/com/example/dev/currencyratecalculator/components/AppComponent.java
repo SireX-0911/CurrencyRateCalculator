@@ -10,7 +10,6 @@ import com.example.dev.currencyratecalculator.views.MainActivity;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import retrofit2.Retrofit;
 
 /**
  * Created by DEV on 24.07.2017.
@@ -19,7 +18,6 @@ import retrofit2.Retrofit;
 @Component(modules = {AppModule.class})
 public interface AppComponent {
 
-    Retrofit getRetrofit();
     ApiManager getApiManager();
     DatabaseManager getDatabaseManager();
 

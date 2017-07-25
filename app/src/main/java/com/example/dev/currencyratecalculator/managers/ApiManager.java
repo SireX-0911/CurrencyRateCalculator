@@ -22,15 +22,19 @@ import static com.example.dev.currencyratecalculator.utils.Constants.BASE_URL;
  */
 
 public class ApiManager {
-    @Inject
-    Retrofit retrofit;
     private CurrencyRateApi rateApi;
     private Context context;
+    private Retrofit retrofit;
 
     @Inject
     public ApiManager(Context context) {
         this.context = context;
         ((App) context.getApplicationContext()).getAppComponent().inject(this);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
         rateApi = retrofit.create(CurrencyRateApi.class);
     }
 

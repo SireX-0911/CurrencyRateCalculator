@@ -20,7 +20,7 @@ import rx.Observer;
  * Created by DEV on 24.07.2017.
  */
 
-public class MainPresenter implements Presenter {
+public class MainPresenter extends Presenter {
 
     private final MainView mainView;
     @Inject
